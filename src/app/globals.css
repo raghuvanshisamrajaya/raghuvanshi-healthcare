@@ -13,12 +13,35 @@
     animation-delay: 2s;
   }
 
+  .animation-delay-3000 {
+    animation-delay: 3s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
   .bg-gradient-healthcare {
     background: linear-gradient(135deg, #004AAD 0%, #29AB87 100%);
   }
 
+  .bg-gradient-healthcare-reverse {
+    background: linear-gradient(135deg, #29AB87 0%, #004AAD 100%);
+  }
+
+  .bg-gradient-subtle {
+    background: linear-gradient(135deg, rgba(0, 74, 173, 0.05) 0%, rgba(41, 171, 135, 0.05) 100%);
+  }
+
   .text-gradient-healthcare {
     background: linear-gradient(135deg, #004AAD 0%, #29AB87 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-blue {
+    background: linear-gradient(135deg, #004AAD 0%, #0066CC 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -30,12 +53,26 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
+  .glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
   .shadow-healthcare {
     box-shadow: 0 25px 50px -12px rgba(0, 74, 173, 0.25);
   }
 
   .shadow-healthcare-green {
     box-shadow: 0 25px 50px -12px rgba(41, 171, 135, 0.25);
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 20px rgba(0, 74, 173, 0.3);
+  }
+
+  .shadow-glow-green {
+    box-shadow: 0 0 20px rgba(41, 171, 135, 0.3);
   }
 }
 

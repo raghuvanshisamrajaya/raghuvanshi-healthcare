@@ -4,6 +4,15 @@ interface RentalStatusPageProps {
   }>;
 }
 
+// Generate static params for the build
+export function generateStaticParams() {
+  return [
+    { id: '1' },
+    { id: '2' },
+    { id: '3' },
+  ];
+}
+
 export default async function RentalStatusPage({ params }: RentalStatusPageProps) {
   const { id } = await params;
   
