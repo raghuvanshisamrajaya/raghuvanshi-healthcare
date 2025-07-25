@@ -1,0 +1,19 @@
+<!-- Default product placeholder SVG -->
+<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="300" fill="url(#bg)"/>
+  <g fill="#64748b">
+    <!-- Shopping bag icon -->
+    <path d="M150 80 L150 60 A20 20 0 0 0 130 40 L170 40 A20 20 0 0 0 150 60 L150 80" stroke="#64748b" stroke-width="2" fill="none"/>
+    <rect x="110" y="80" width="80" height="120" rx="8" stroke="#64748b" stroke-width="2" fill="none"/>
+    <path d="M125 110 L175 110" stroke="#64748b" stroke-width="2"/>
+    <path d="M125 130 L160 130" stroke="#64748b" stroke-width="2"/>
+    <path d="M125 150 L170 150" stroke="#64748b" stroke-width="2"/>
+  </g>
+  <text x="150" y="230" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="14">Product Image</text>
+</svg>

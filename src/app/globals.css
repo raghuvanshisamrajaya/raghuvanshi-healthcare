@@ -1,0 +1,406 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@layer utilities {
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+}
+
+@layer base {
+  :root {
+    --healthcare-blue: #004AAD;
+    --healthcare-green: #29AB87;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --foreground-rgb: 255, 255, 255;
+      --background-start-rgb: 0, 0, 0;
+      --background-end-rgb: 0, 0, 0;
+    }
+  }
+
+  body {
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgb(var(--background-end-rgb))
+      )
+      rgb(var(--background-start-rgb));
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #004AAD;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0066cc;
+  }
+
+  /* Form Input Styling Fixes */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="tel"],
+  input[type="number"],
+  textarea,
+  select {
+    color: #1f2937 !important;
+    background-color: white !important;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    padding: 0.75rem 1rem;
+    transition: all 0.2s ease;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus,
+  input[type="tel"]:focus,
+  input[type="number"]:focus,
+  textarea:focus,
+  select:focus {
+    outline: none;
+    border-color: #004AAD;
+    box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.1);
+    color: #1f2937 !important;
+  }
+
+  /* Enhanced placeholder styling */
+  input::placeholder,
+  textarea::placeholder {
+    color: #9ca3af !important;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  /* Hide placeholder when focused or has value */
+  input:focus::placeholder,
+  textarea:focus::placeholder {
+    opacity: 0 !important;
+    transform: translateX(8px);
+  }
+
+  /* Ensure text is visible when typing */
+  input:not(:placeholder-shown),
+  textarea:not(:placeholder-shown) {
+    color: #1f2937 !important;
+    background-color: #ffffff !important;
+  }
+
+  /* Override Tailwind placeholder classes */
+  .placeholder-gray-500::placeholder {
+    color: #9ca3af !important;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .placeholder-gray-500:focus::placeholder {
+    opacity: 0 !important;
+    transform: translateX(8px);
+  }
+
+  /* Additional focus improvements */
+  input:focus,
+  textarea:focus {
+    color: #1f2937 !important;
+    background-color: #ffffff !important;
+    outline: none !important;
+  }
+
+  /* Icon visibility improvements */
+  .absolute.inset-y-0.left-0 {
+    transition: opacity 0.3s ease;
+  }
+
+  /* When input is focused, fade icon slightly */
+  input:focus + .absolute.inset-y-0.left-0,
+  input:focus ~ .absolute.inset-y-0.left-0,
+  .relative:focus-within .absolute.inset-y-0.left-0 {
+    opacity: 0.3;
+  }
+
+  /* Better icon fading for all input field icons */
+  .relative input:focus ~ .absolute svg,
+  .relative input:focus + .absolute svg,
+  .relative:focus-within .absolute svg {
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Icon fading when input has content */
+  .relative input:not(:placeholder-shown) ~ .absolute svg,
+  .relative input:not(:placeholder-shown) + .absolute svg {
+    opacity: 0.4;
+  }
+
+  /* Specific fixes for form inputs with icons */
+  input[class*="pl-10"]:focus::placeholder {
+    opacity: 0 !important;
+    transform: translateX(12px);
+  }
+
+  /* Autofill styling improvements */
+  input:-webkit-autofill::placeholder {
+    opacity: 0 !important;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #1f2937 !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  /* Dark mode input fixes */
+  @media (prefers-color-scheme: dark) {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="number"],
+    textarea,
+    select {
+      color: #1f2937 !important;
+      background-color: white !important;
+      border-color: #d1d5db;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #9ca3af !important;
+    }
+  }
+}
+
+@layer components {
+  .btn-primary {
+    background-color: #004AAD;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+  }
+
+  .btn-primary:hover {
+    background-color: #0066cc;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-secondary {
+    background-color: #29AB87;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+  }
+  
+  .btn-secondary:hover {
+    background-color: #228a70;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.2);
+  }
+
+  .input-field {
+    color: #1f2937 !important;
+    background-color: white !important;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+  }
+
+  .input-field:focus {
+    outline: none;
+    border-color: #004AAD;
+    box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.1);
+    color: #1f2937 !important;
+  }
+
+  .input-field::placeholder {
+    color: #9ca3af !important;
+    opacity: 0.8;
+  }
+
+  .input-field:focus::placeholder {
+    opacity: 0 !important;
+  }
+  
+  .hero-gradient {
+    background: linear-gradient(135deg, #004AAD 0%, #0066cc 50%, #29AB87 100%);
+  }
+
+  /* Enhanced form styling */
+  .form-input {
+    color: #1f2937 !important;
+    background-color: white !important;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    transition: all 0.2s ease;
+    width: 100%;
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: #004AAD;
+    box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.1);
+    color: #1f2937 !important;
+  }
+
+  .form-input::placeholder {
+    color: #9ca3af !important;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+  }
+
+  .form-input:focus::placeholder {
+    opacity: 0 !important;
+  }
+
+  .form-input-with-icon {
+    padding-left: 2.5rem;
+  }
+
+  /* Enhanced icon fading for form inputs */
+  .form-input-with-icon:focus + .absolute svg,
+  .form-input-with-icon:focus ~ .absolute svg {
+    opacity: 0.3 !important;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Icon fading on any input focus within relative container */
+  .relative input:focus ~ div svg,
+  .relative input:focus + div svg,
+  .relative:focus-within > div svg {
+    opacity: 0.3 !important;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Global form field improvements */
+  input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="range"]):not([type="color"]),
+  textarea,
+  select {
+    font-size: 16px !important; /* Prevents zoom on iOS */
+    line-height: 1.5;
+  }
+
+  /* Ensure all form fields have proper text visibility */
+  input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="range"]):not([type="color"]):not(:placeholder-shown),
+  textarea:not(:placeholder-shown) {
+    color: #1f2937 !important;
+    background-color: white !important;
+  }
+
+  /* Universal icon fading rules */
+  .relative input:focus ~ .absolute svg,
+  .relative input:focus + .absolute svg,
+  .relative textarea:focus ~ .absolute svg,
+  .relative textarea:focus + .absolute svg,
+  div:has(input:focus) svg,
+  div:has(textarea:focus) svg {
+    opacity: 0.3 !important;
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+  }
+
+  /* Icon fading when input has value */
+  .relative input:not(:placeholder-shown) ~ .absolute svg,
+  .relative input:not(:placeholder-shown) + .absolute svg,
+  .relative textarea:not(:placeholder-shown) ~ .absolute svg,
+  .relative textarea:not(:placeholder-shown) + .absolute svg {
+    opacity: 0.4 !important;
+    transition: all 0.3s ease;
+  }
+
+  /* Default icon state */
+  .relative .absolute svg {
+    opacity: 0.6;
+    transition: all 0.3s ease;
+  }
+
+  /* Additional icon fading selectors for different structures */
+  input:focus ~ div > svg,
+  input:focus + div > svg,
+  textarea:focus ~ div > svg,
+  textarea:focus + div > svg {
+    opacity: 0.3 !important;
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+  }
+
+  /* Icon fading for specific class patterns */
+  .relative:focus-within svg {
+    opacity: 0.3 !important;
+    transition: all 0.3s ease;
+  }
+
+  /* Ensure icons return to normal state when not focused */
+  .relative:not(:focus-within) svg {
+    opacity: 0.6 !important;
+    transform: scale(1);
+    transition: all 0.3s ease;
+  }
+
+  /* Fix text overlapping issues */
+  .relative input,
+  .relative textarea {
+    position: relative;
+    z-index: 2;
+    background-color: white !important;
+  }
+
+  .relative .absolute {
+    z-index: 1;
+  }
+
+  /* Ensure proper spacing for inputs with icons */
+  input[class*="pl-10"],
+  textarea[class*="pl-10"] {
+    padding-left: 2.5rem !important;
+  }
+
+  /* Prevent text from overlapping icons */
+  .relative input:not(:placeholder-shown),
+  .relative textarea:not(:placeholder-shown) {
+    background-color: white !important;
+    color: #1f2937 !important;
+    z-index: 2;
+  }
+
+  /* Fix for webkit autofill */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: #1f2937 !important;
+  }
+}

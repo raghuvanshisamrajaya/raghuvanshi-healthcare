@@ -1,0 +1,11 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="60" height="60" rx="8" fill="#004AAD"/>
+  <path d="M30 15C33.866 15 37 18.134 37 22V30H23V22C23 18.134 26.134 15 30 15Z" fill="#29AB87"/>
+  <path d="M23 30H37V38C37 41.866 33.866 45 30 45C26.134 45 23 41.866 23 38V30Z" fill="white"/>
+  <text x="75" y="25" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#004AAD">
+    RAGHUVANSHI
+  </text>
+  <text x="75" y="42" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#29AB87">
+    HEALTHCARE
+  </text>
+</svg>

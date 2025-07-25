@@ -1,0 +1,28 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="equipGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8f5e8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2e7d32;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="#f8f9fa"/>
+  
+  <!-- Stethoscope -->
+  <circle cx="200" cy="150" r="80" fill="none" stroke="#2e7d32" stroke-width="8"/>
+  <circle cx="120" cy="150" r="15" fill="url(#equipGradient)" stroke="#1b5e20" stroke-width="2"/>
+  <circle cx="280" cy="150" r="15" fill="url(#equipGradient)" stroke="#1b5e20" stroke-width="2"/>
+  
+  <!-- Earpieces -->
+  <line x1="120" y1="135" x2="100" y2="100" stroke="#2e7d32" stroke-width="6" stroke-linecap="round"/>
+  <line x1="280" y1="135" x2="300" y2="100" stroke="#2e7d32" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="100" cy="100" r="8" fill="#1b5e20"/>
+  <circle cx="300" cy="100" r="8" fill="#1b5e20"/>
+  
+  <!-- Chest piece -->
+  <circle cx="200" cy="230" r="25" fill="url(#equipGradient)" stroke="#1b5e20" stroke-width="3"/>
+  <circle cx="200" cy="230" r="15" fill="#1b5e20"/>
+  
+  <text x="200" y="280" text-anchor="middle" font-family="Arial" font-size="14" fill="#555">Medical Equipment</text>
+</svg>
